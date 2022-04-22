@@ -1,0 +1,20 @@
+docker run -d \
+  --name=transmission \
+  -e FILE__USER=.secrets/transmission_user \
+  -e FILE__PASSWORD=.secrets/transmission_pass \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/London \
+  -e TRANSMISSION_WEB_HOME=/combustion-release/ `#optional` \
+  -e USER=USER `#optional` \
+  -e PASS=PASSWORD `#optional` \
+  -e WHITELIST=iplist `#optional` \
+  -e PEERPORT=peerport `#optional` \
+  -e HOST_WHITELIST=dnsname list `#optional` \
+  -p 9091:9091 \
+  -p 51413:51413 \
+  -p 51413:51413/udp \
+  -v /var/lib/transmission/config:/config \
+  -v /var/lib/transmission/downloads:/downloads \
+  --restart unless-stopped \
+  lscr.io/linuxserver/transmission

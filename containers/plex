@@ -1,0 +1,11 @@
+docker run -d \
+  --name=plex \
+  --net=host \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e VERSION=docker \
+  -e PLEX_CLAIM= `#optional` \
+  -v /mnt/Public/TV\ Shows:/TV\ Shows \
+  -v /mnt/Public/Films:/Films \
+  --restart unless-stopped \
+  lscr.io/linuxserver/plex
