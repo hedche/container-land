@@ -1,0 +1,12 @@
+docker run \
+      --env=CODE=ACTCODE\
+      --env=SERVER=SMART \
+      --cap-add=NET_ADMIN \
+      --device=/dev/net/tun \
+      --privileged \
+      --detach=true \
+      --tty=true \
+      --name=expressvpn \
+      --publish 80:80 \
+      misioslav/expressvpn \
+      /bin/bash
