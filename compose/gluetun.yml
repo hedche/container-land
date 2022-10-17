@@ -1,0 +1,13 @@
+version: "3"
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: vpn
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - VPN_SERVICE_PROVIDER=mullvad
+      - VPN_TYPE=wireguard
+      - WIREGUARD_PRIVATE_KEY=WAWjh8ZRnqtbZJ6KjOR4BhKwsWaR8WFTri5p6w6uMnA=
+      - WIREGUARD_ADDRESSES=10.65.37.65/32
+      - SERVER_CITIES=London
