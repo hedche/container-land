@@ -1,3 +1,4 @@
 containers/.secrets
 compose/mullvad.yml
 compose/transmission.yml
+compose/prometheus/prometheus.yml
